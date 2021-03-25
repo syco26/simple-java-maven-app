@@ -10,16 +10,18 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: SonarCloudPrepare@1
+
+  - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'scsyco'
     organization: 'sylvaincombe0048'
     scannerMode: 'Other'
-    # Additional properties that will be passed to the scanner,
-    # Put one key=value per line, example:
-    # sonar.exclusions=**/*.bin
-    sonar.projectKey=sylvaincombe0048_SimpleGH
-    sonar.projectName=SimpleGH
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+      sonar.projectKey=sylvaincombe0048_SimpleGH
+      sonar.projectName=SimpleGH
+
 
 - task: Maven@3
   inputs:
