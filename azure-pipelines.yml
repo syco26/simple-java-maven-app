@@ -9,16 +9,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+
 steps:
+
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'scsyco'
-    organization: 'sylvaincombe0048'
+    SonarCloud: 'SonarCloudSyco'
+    organization: 'aztest-syco'
     scannerMode: 'Other'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
-      sonar.projectKey=sylvaincombe0048_SimpleGH
+      sonar.projectKey=saztest-syco_SimpleGH
       sonar.projectName=SimpleGH
 
 
